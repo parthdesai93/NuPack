@@ -1,8 +1,8 @@
 import {expect} from 'chai';
-
 import {getMarkup} from '../src/core';
 
 describe('application logic', () => {
+  
   it('calculates food markup properly', () => {
     let base_price = 1299.99;
     let people_required = 3;
@@ -20,8 +20,8 @@ describe('application logic', () => {
     let final_price = getMarkup(base_price, people_required,type);
     expect(final_price).to.equal(
       6199.81
-    )
-  })
+    );
+  });
 
   it('calculates books properly', () => {
     let base_price = 12456.95;
@@ -36,11 +36,11 @@ describe('application logic', () => {
   it('handles null base price', () => {
     let base_price = null;
     let people_required = 2;
-    let type = null;
+    let type = 'food';
     let final_price = getMarkup(base_price, people_required,type);
     expect(final_price).to.equal(
       'Cannot calculate markup without base price'
     );
   });
 
-})
+});
